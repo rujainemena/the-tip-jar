@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS tipjar_db;
+CREATE DATABASE tipjar_db;
+
