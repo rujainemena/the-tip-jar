@@ -1,17 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
-body{
- 
-  background-image: url(../images/jars.png);
-  background-repeat: no-repeat;
-  width: 50%;
-  height: 50%;
-  position: relative;
-}
 
 .no-button {
-  background: none;
+  background: url(../images/the\ jar.png);
   border: none;
   padding: 0;
   cursor: pointer;
