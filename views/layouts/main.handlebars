@@ -4,17 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fund My Project!</title>
+  <title>The Tip Jar</title>
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link href="/dist/output.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
+      <h1 class="text-3xl font-bold underline">
+        Hello world!
+        {{!-- <span role="img" aria-label="money">💸</span>
+        <a href="/">Fund My Project!</a> --}}
+
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -31,6 +34,9 @@
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
+      <div class="flex -space-x-1 overflow-hidden">
+  <img class="inline-block h-6 w-6 rounded-full ring-2 ring-white" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+
     </main>
     <footer>
       
