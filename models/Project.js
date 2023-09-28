@@ -14,6 +14,7 @@ Project.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     description: {
       type: DataTypes.STRING,
@@ -21,7 +22,6 @@ Project.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     needed_funding: {
       type: DataTypes.FLOAT,
