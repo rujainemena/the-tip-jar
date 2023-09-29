@@ -58,6 +58,7 @@ router.get('/jar/:id', async (req, res) => {
 });
 
 
+
 //http://localhost:3001/profile
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
