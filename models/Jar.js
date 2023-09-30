@@ -2,10 +2,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Jar extends Model {}
-
-Jar.init(
-  {
-    id: {
+Jar.init( { id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
@@ -14,10 +11,9 @@ Jar.init(
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
-      defaultValue: DataTypes.NOW,
     },
     daily_earnings: {
-      type: DataTypes.FLOAT,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
     user_id: {
@@ -37,5 +33,6 @@ Jar.init(
     modelName: 'Jar',
   }
 );
+
 
 module.exports = Jar;

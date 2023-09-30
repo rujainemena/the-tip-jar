@@ -6,9 +6,11 @@ header, .project:not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
 
+
 .no-button {
-  background: none;
-  border: none;
+
+  background-position: 30%;
+  border-right: #056605;
   padding: 0;
   cursor: pointer;
   color: #1b89bc;
@@ -26,4 +28,9 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
-
+body{
+  background: rgb(241,233,228);
+  display:flex;
+  justify-content: center;
+  width: 100%;
+}

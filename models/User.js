@@ -35,6 +35,10 @@ User.init(
         len: [8],
       },
     },
+    monthly_goal: {
+      type: DataTypes.DECIMAL,
+      allowNull: false
+    }
   },
   {
     hooks: {
