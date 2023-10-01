@@ -23,6 +23,7 @@ Jar.init( { id: {
     },
     user_id: {
       type: DataTypes.INTEGER,
+      // foreign key
       references: {
         model: 'user',
         key: 'id',
@@ -34,7 +35,7 @@ Jar.init( { id: {
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'jar',
+    modelName: 'Jar',
   }
 );
 
