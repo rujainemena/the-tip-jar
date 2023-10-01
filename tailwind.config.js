@@ -4,5 +4,15 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
-}
+  plugins: []
+};
+
+module.exports = {
+  content: ["./views/login.handlebars", "./views/signup.handlebars"],
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
+};
