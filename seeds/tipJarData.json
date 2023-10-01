@@ -1,14 +1,14 @@
 [
   {
-    
+    "jarname": "jar 1",
     "daily_earnings": 100
   },
   {
-    
+    "jarname": "jar 2",
     "daily_earnings": 100
   },
   {
-    
+    "jarname": "jar 3",
     "daily_earnings": 100
   }
 ]
