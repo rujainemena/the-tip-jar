@@ -14,9 +14,9 @@
 </head>
 
 <body class="h-full">
-  <div class="flex-column justify-space-around">
+  <div>
     <header>
-      <nav>
+      {{!-- <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <a href="/profile">profile</a> |
@@ -26,9 +26,10 @@
 
         <a href="/signup">Signup</a>
         {{/if}}
-      </nav>
+      </nav> --}}
 
     </header>
+    
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
