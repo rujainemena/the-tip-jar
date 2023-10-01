@@ -14,7 +14,7 @@
         <input class="form-input" type="text" id="project-name" name="project-name" />
       </div>
       <div class="form-group">
-        <label for="project-funding">needed funding ($):</label>
+        <label for="project-funding">daily earning ($):</label>
         <input class="form-input" type="number" id="project-funding" name="project-funding" />
       </div>
       <div class="form-group">
@@ -27,17 +27,17 @@
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if jars.length}}
+  <div class="col-md-6 jar-list">
+    <h3>Current jars:</h3>
 
-    {{#each projects as |project|}}
+    {{#each jars as |jar|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/jars/{{jar.id}}">{{jar.jarname}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{jar.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
