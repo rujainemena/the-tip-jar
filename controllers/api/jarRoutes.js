@@ -1,53 +1,7 @@
 const router = require('express').Router();
-const { Jar, User } = require('../../models');
+const { Jar } = require('../../models');
 
-
-//http://localhost:3001/jars/
-router.get('/jars', async (req, res) => {
-  try {
-    const jarData = await Jar.findByAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const jar = jarData.get({ plain: true });
-
-    res.render('jar', {
-      ...jar,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-//http://localhost:3001/jar/1
-router.get('/jars/:id', async (req, res) => {
-  try {
-    const jarData = await Jar.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const jar = jarData.get({ plain: true });
-
-    res.render('jar', {
-      ...jar,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
+// http://localhost:3001/api/jars/
 router.post('/', async (req, res) => {
   console.log(req.body)
   try {
@@ -62,8 +16,7 @@ router.post('/', async (req, res) => {
   }
 });
 
-
-
+// http://localhost:3001/jars/1
 router.delete('/:id', async (req, res) => {
   try {
     const jarData = await Jar.destroy({

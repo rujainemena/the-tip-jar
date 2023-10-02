@@ -4,8 +4,18 @@ const withAuth = require('../utils/auth');
 
 
 //all html routes are doing get method is reading
+
 //http://localhost:3001/
 router.get('/', async (req, res) => {
+  try {
+    res.render('homepage')
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+//http://localhost:3001/jars
+router.get('/jars', withAuth, async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const jarData = await Jar.findAll({
@@ -16,23 +26,43 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    //select user.name , project.* from project join user on user.id = project.user_id
-
-//projectData is raw data, can't use raw data on handlebar template
+    //jarData is raw data, can't use raw data on handlebar template
     // Serialize data so the template can read it
     //take raw data and format it to json
     const jars = jarData.map((jar) => jar.get({ plain: true }));
 
     // Pass serialized data and session flag into template
-    res.render('homepage', { 
-      jars, 
-      logged_in: req.session.logged_in 
+    res.render('jars', {
+      jars,
+      logged_in: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+//http://localhost:3001/jars/1
+router.get('/jars/:id', withAuth, async (req, res) => {
+  try {
+    const jarData = await Jar.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['name'],
+        },
+      ],
+    });
+
+    const jar = jarData.get({ plain: true });
+
+    res.render('jars', {
+      ...jar,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 
 //http://localhost:3001/profile

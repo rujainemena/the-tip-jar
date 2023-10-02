@@ -12,9 +12,9 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const jar of jarData) {
+  for (const jarTips of jarData) {
     await Jar.create({
-      ...jar,
+      ...jarTips,
       user_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
