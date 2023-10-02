@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./views/layouts/main.handlebars", "./views/layouts/homepage.handlebars"],
   theme: {
-    extend: {},
+    extend: {}
   },
   plugins: []
 };

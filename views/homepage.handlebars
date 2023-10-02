@@ -34,7 +34,7 @@
     </nav>
 
     <!-- MOBILE MENU, show/hide based on menu open state. -->
-    <div class="lg:hidden" role="dialog" aria-modal="true">
+    <div id="mobile-menu" class="md:hidden" role="dialog" aria-modal="true">
       <!-- Background backdrop, show/hide based on slide-over state. -->
       <div class="fixed inset-0 z-50"></div>
       <div
@@ -45,27 +45,32 @@
             <span class="sr-only">The Tip Jar</span>
             <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
           </a>
-          <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+          {{!-- CLOSE MENU --}}
+          <button id="close-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
             <span class="sr-only">Close menu</span>
             <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
               aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
           </button>
+
         </div>
+        {{!-- LISTED NAVIGATION --}}
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10">
             <div class="space-y-2 py-6">
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">My Tip Jar</a>
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:yellowgreen">My
+                Tip Jar</a>
               <a href="/profile"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Current Earnings</a>
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:yellowgreen">Current
+                Earnings</a>
               <a href="#"
-                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Goals</a>
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:yellowgreen">Goals</a>
             </div>
             <div class="py-6">
               <a href="/login"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:yellowgreen">Log
                 in</a>
             </div>
           </div>
@@ -73,7 +78,7 @@
       </div>
     </div>
   </header>
-{{!-- HERO SECTION --}}
+  {{!-- HERO SECTION --}}
   <div class="relative isolate px-6 pt-14 lg:px-8">
     <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
       <div
@@ -94,7 +99,8 @@
       {{!-- WELCOME MESSAGE --}}
       <div class="text-center">
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">Data to enrich your online business</h1>
-        <p class="mt-6 text-lg leading-8 text-gray-600">Keep track of all of your tips with The Tip Jar! Whether your a server, bartender, barista, or dog walker -- this is the app for you as you manage your earnings. </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Keep track of all of your tips with The Tip Jar! Whether your a
+          server, bartender, barista, or dog walker -- this is the app for you as you manage your earnings. </p>
         <div class="mt-10 flex items-center justify-center gap-x-6">
           <a href="/signup"
             class="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Get
@@ -111,6 +117,8 @@
       </div>
     </div>
   </div>
+
+  <script src="./js/hompage.js"></script>
 </div>
 
 
