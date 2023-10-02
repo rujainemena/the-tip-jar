@@ -8,9 +8,14 @@ Jar.init( { id: {
       primaryKey: true,
       autoIncrement: true,
     },
+    jarname:{
+      type: DataTypes.STRING,
+      allowNull:false
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
+      defaultValue: DataTypes.NOW,
     },
     daily_earnings: {
       type: DataTypes.DECIMAL,
@@ -18,6 +23,7 @@ Jar.init( { id: {
     },
     user_id: {
       type: DataTypes.INTEGER,
+      // foreign key
       references: {
         model: 'user',
         key: 'id',
@@ -29,7 +35,7 @@ Jar.init( { id: {
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'jar',
+    modelName: 'Jar',
   }
 );
 

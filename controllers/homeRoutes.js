@@ -34,7 +34,7 @@ router.get('/', async (req, res) => {
 });
 
 
-//http://localhost:3001/project/1
+//http://localhost:3001/jar/1
 router.get('/jar/:id', async (req, res) => {
   try {
     const jarData = await Jar.findByPk(req.params.id, {
@@ -70,7 +70,7 @@ router.get('/profile', withAuth, async (req, res) => {
     });
 
     const user = userData.get({ plain: true });
-
+    console.log(user)
     res.render('profile', {
       ...user,
       logged_in: true
@@ -90,7 +90,7 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
-
+//http://localhost:3001/signup
 router.get('/signup', (req, res) => {
   // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {

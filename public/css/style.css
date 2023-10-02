@@ -7,6 +7,7 @@ header, .project:not(:last-child) {
 }
 
 
+
 .no-button {
 
   background-position: 30%;
@@ -19,7 +20,7 @@ header, .project:not(:last-child) {
 }
 
 .no-button:hover {
-  color: #065b83;
+  color: greenyellow;
   text-decoration: underline;
 }
 
@@ -28,9 +29,4 @@ header, .project:not(:last-child) {
   font-weight: bold;
   margin-left: -5px;
 }
-body{
-  background: rgb(241,233,228);
-  display:flex;
-  justify-content: center;
-  width: 100%;
-}
+

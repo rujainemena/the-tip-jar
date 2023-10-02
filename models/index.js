@@ -11,4 +11,3 @@ Jar.belongsTo(User, {
 });
 
 module.exports = { User, Jar };
-
