@@ -9,11 +9,11 @@ Jar.init({
     primaryKey: true,
     autoIncrement: true,
   },
-  jarname: {
+  jar_name: {
     type: DataTypes.STRING,
     allowNull: false
   },
-  date_created: {
+  shift_date: {
     type: DataTypes.DATE,
     allowNull: false,
     defaultValue: DataTypes.NOW,

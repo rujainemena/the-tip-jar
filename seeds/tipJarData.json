@@ -1,16 +1,17 @@
-
-
 [
   {
-    "jarname": "jar 1",
+    "jar_name": "jar 1",
+    "shift_date": "mm/dd/yyy",
     "daily_earnings": 100
   },
   {
-    "jarname": "jar 2",
+    "jar_name": "jar 2",
+    "shift_date": "mm/dd/yyy",
     "daily_earnings": 100
   },
   {
-    "jarname": "jar 3",
+    "jar_name": "jar 3",
+    "shift_date": "mm/dd/yyy",
     "daily_earnings": 100
   }
 ]

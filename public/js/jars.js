@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
 
-  const jarname = document.querySelector('#project-name').value.trim();
-  const daily_earnings = document.querySelector('#project-funding').value.trim();
-  const description = document.querySelector('#project-desc').value.trim();
-  alert(jarname+daily_earnings+description)
-  if (jarname && daily_earnings && description) {
+  const jarName = document.querySelector('#jar-name').value.trim();
+  const dailyEarnings = document.querySelector('#daily-earning').value.trim();
+  const shiftDate = document.querySelector('#shift-date').value.trim();
+
+  alert(jarName + dailyEarnings + shiftDate)
+  if (jarName && dailyEarnings && shiftDate) {
     const response = await fetch(`/api/jars`, {
       method: 'POST',
-      body: JSON.stringify({ jarname, daily_earnings, description }),
+      body: JSON.stringify({ jarName, dailyEarnings, shiftDate }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,9 +40,9 @@ const delButtonHandler = async (event) => {
 };
 
 document
-  .querySelector('.new-project-form')
+  .querySelector('.new-tip-jar')
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.project-list')
+  .querySelector('.jar-list')
   .addEventListener('click', delButtonHandler);

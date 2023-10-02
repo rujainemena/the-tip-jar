@@ -86,62 +86,51 @@
       </div>
     </div>
 
-
-    <form>
-      {{!-- WELCOME MESSAGE --}}
-      <div class="mx-auto max-w-7xl px-6 lg:px-8 sm:leading-10">
-        <div class="mx-auto max-w-2xl sm:text-center sm:leading-10">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-6">Create Your Tip Jar
-          </h2>
-          <p class="mt-6 text-lg leading-8 text-gray-600"> Designate a tip jar from where you'd like to start tracking
-            your
-            coin. If you have multiple places of work, you can create multiple jars!</p>
-        </div>
+    {{!-- WELCOME MESSAGE --}}
+    <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-20">
+      <div class="text-center">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl">Let's Make a Tip Jar</h1>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Designate a tip jar from where you'd like to start tracking your
+          coin. If you have multiple places of work, you can create multiple jars!</p>
       </div>
+    </div>
 
+    <form class="new-tip-jar">
+      {{!-- BORDER --}}
       <div class="space-y-12">
-        <div class="border-b border-gray-900/10 pb-12">
-
-        </div>
+        <div class="border-b border-gray-900/10 pb-12"></div>
 
         <div class="border-b border-gray-900/10 pb-12">
-          <h2 class="text-base font-semibold leading-7 text-gray-900">Personal Information</h2>
-          <p class="mt-1 text-sm leading-6 text-gray-600">Use a permanent address where you can receive mail.</p>
+          <h2 class="text-base font-semibold leading-7 text-gray-900">Jar Information</h2>
+          <p class="mt-1 text-sm leading-6 text-gray-600">Label your tip jar and track how much you've earned today.</p>
 
-          <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+          <div class="form-group mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
             <div class="sm:col-span-3">
-              <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">First name</label>
+              <label for="jar-name" class="block text-sm font-medium leading-6 text-gray-900">Jar Name</label>
               <div class="mt-2">
-                <input type="text" name="first-name" id="first-name" autocomplete="given-name"
+                <input type="text" name="jar-name" id="first-name" autocomplete="given-name" id="jar-name"
                   class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
               </div>
             </div>
-
-            <div class="sm:col-span-3">
-              <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Last name</label>
-              <div class="mt-2">
-                <input type="text" name="last-name" id="last-name" autocomplete="family-name"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-
-            <div class="sm:col-span-4">
-              <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Email address</label>
-              <div class="mt-2">
-                <input id="email" name="email" type="email" autocomplete="email"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
-              </div>
-            </div>
-
-            <div class="sm:col-span-3">
-              <label for="country" class="block text-sm font-medium leading-6 text-gray-900">Country</label>
-              <div class="mt-2">
-                <select id="country" name="country" autocomplete="country-name"
-                  class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:max-w-xs sm:text-sm sm:leading-6">
-                  <option>United States</option>
-                  <option>Canada</option>
-                  <option>Mexico</option>
-                </select>
+            {{!-- TIP INPUT --}}
+            <div>
+              <label for="daily-earning" class="block text-sm font-medium leading-6 text-gray-900">Tip Total</label>
+              <div class="relative mt-2 rounded-md shadow-sm">
+                <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+                  <span class="text-gray-500 sm:text-sm">$</span>
+                </div>
+                <input type="text" name="daily-earning" id="daily-earning"  
+                  class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                  placeholder="0.00">
+                <div class="absolute inset-y-0 right-0 flex items-center">
+                  <label for="currency" class="sr-only">Currency</label>
+                  <select id="currency" name="currency"
+                    class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                    <option>USD</option>
+                    <option>CAD</option>
+                    <option>EUR</option>
+                  </select>
+                </div>
               </div>
             </div>
 
@@ -184,8 +173,8 @@
 
       <div class="mt-6 flex items-center justify-end gap-x-6">
         <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
-        <button type="submit"
-          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+        <button type="submit" type="submit" class="btn btn-primary"
+          class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
       </div>
     </form>
 
@@ -212,26 +201,10 @@
 
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>THE TIP JAR</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">THE TIP JAR</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
-      </div>
-      <div class="form-group">
-
-        <label for="project-funding">Monthly Earning Goal:</label>
-
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
-      </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
-      </div>
+    <div class="form-group">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
     </form>
   </div>
 
@@ -243,7 +216,7 @@
       {{#each jars as |jar|}}
       <div class="row mb-2">
         <div class="col-md-8">
-          <h4><a href="/jars/{{jar.id}}">{{jar.jarname}}</a></h4>
+          <h4><a href="/jars/{{jar.id}}">{{jar.jarName}}</a></h4>
         </div>
         <div class="col-md-4">
           <button class="btn btn-sm btn-danger" data-id="{{jar.id}}">DELETE</button>
