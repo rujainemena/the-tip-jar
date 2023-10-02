@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>THE TIP JAR</h3>
+
+    <form class="form new-project-form">
+      <div class="form-group">
+        <label for="project-name">THE TIP JAR</label>
+        <input class="form-input" type="text" id="project-name" name="project-name" />
+      </div>
+      <div class="form-group">
+
+        <label for="project-funding">Monthly Earning Goal:</label>
+
+        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      </div>
+      <div class="form-group">
+        <label for="project-desc">description:</label>
+        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  <div>
+    {{#if jars.length}}
+    <div class="col-md-6 jar-list">
+      <h3>Current jars:</h3>
+
+      {{#each jars as |jar|}}
+      <div class="row mb-2">
+        <div class="col-md-8">
+          <h4><a href="/jars/{{jar.id}}">{{jar.jarname}}</a></h4>
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-sm btn-danger" data-id="{{jar.id}}">DELETE</button>
+        </div>
+      </div>
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+</div>
