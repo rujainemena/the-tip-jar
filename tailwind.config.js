@@ -8,7 +8,7 @@ module.exports = {
 };
 
 module.exports = {
-  content: ["./views/login.handlebars", "./views/signup.handlebars"],
+  content: ["./views/login.handlebars", "./views/signup.handlebars", "./views/jars.handlebars"],
   theme: {
     extend: {},
   },
