@@ -66,6 +66,8 @@ https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwjagaG_
 
 *Install 'tailwind.config.js', link below will give you a step-by-step indication of the installation to Tailwind CSS.
 
+https://tailwindcss.com/docs/installation
+
 ## Usage
 
 Provide instructions and examples for use. Include screenshots as needed.
