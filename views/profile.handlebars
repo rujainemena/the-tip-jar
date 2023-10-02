@@ -45,7 +45,7 @@
       </div>
       {{!-- ACCOUNT LOGIN LINK --}}
       <div class="hidden lg:flex lg:flex-1 lg:justify-end">
-        <a href="/login" class="text-sm font-semibold leading-6 text-gray-900">Log in <span
+        <a href="/" class="text-sm font-semibold leading-6 text-gray-900">Logout <span
             aria-hidden="true">&rarr;</span></a>
       </div>
     </nav>
@@ -86,9 +86,8 @@
                 class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Goals</a>
             </div>
             <div class="py-6">
-              <a href="/login"
-                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Log
-                in</a>
+              <a href="/"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Logout</a>
             </div>
           </div>
         </div>
@@ -98,7 +97,6 @@
   {{!-- HERO SECTION --}}
   <div class="bg-white py-24 sm:py-32">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      
       <div class="mx-auto max-w-2xl sm:text-center">
         <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{name}}'s Tips</h2>
         <p class="mt-6 text-lg leading-8 text-gray-600">Check out all the tips you've collected so far!</p>
@@ -139,6 +137,7 @@
                 <span class="text-5xl font-bold tracking-tight text-gray-900">2,000</span>
                 <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
               </p>
+              {{!-- MUST UPDATE TO GOAL.HANDLEBAR --}}
               <a href="#"
                 class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update
                 Goal</a>
@@ -148,4 +147,5 @@
       </div>
     </div>
   </div>
+  <script src="../public/js/logout.js"></script>
 </div>

@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
 });
 
 //http://localhost:3001/jars
-router.get('/jars', withAuth, async (req, res) => {
+router.get('/jars', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
     const jarData = await Jar.findAll({
@@ -42,7 +42,7 @@ router.get('/jars', withAuth, async (req, res) => {
 });
 
 //http://localhost:3001/jars/1
-router.get('/jars/:id', withAuth, async (req, res) => {
+router.get('/jars/:id', async (req, res) => {
   try {
     const jarData = await Jar.findByPk(req.params.id, {
       include: [
