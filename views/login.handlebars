@@ -1,0 +1,68 @@
+{{!-- TAILWINDCSS CODE IS BELOW --}}
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  {{!-- TOP GRADIENT EFFECT --}}
+  <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+    <div
+      class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
+  {{!-- logo --}}
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <a href="/">
+      <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+        alt="The Tip Jar">
+    </a>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Sign In To Your Tip Jar
+      Account
+    </h2>
+  </div>
+
+  {{!-- LOGIN FORM --}}
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="form login-form">
+
+      <div>
+        <label for="email-login" class="form-group block text-sm font-medium leading-6 text-gray-900">Email
+          Address</label>
+        <div class="mt-2">
+          <input id="email-login" name="email" type="email" autocomplete="email" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+
+      <div>
+        <div class="flex items-center justify-between">
+          <label for="password-login" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+        </div>
+        <div class="form-group mt-2">
+          <input id="password-login" name="password" type="password" autocomplete="current-password" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+      {{!-- LOGIN BUTTON --}}
+      <div class="form-group">
+        <button type="submit"
+          class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+          in</button>
+      </div>
+    </form>
+    {{!-- SIGNUP REDIRECTION --}}
+    <p class="mt-10 text-center text-sm text-gray-500">
+      Don't have an account?
+      <a href="/signup" class="font-semibold leading-6 text-indigo-600 hover:text-green-500">Sign up here.</a>
+    </p>
+  </div>
+
+  {{!-- BOTTOM  GRADIENT EFFECT --}}
+  <div
+    class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+    aria-hidden="true">
+    <div
+      class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+      style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+    </div>
+  </div>
+
+  <script src="/js/login.js"></script>
+</div>

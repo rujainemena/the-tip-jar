@@ -1,0 +1,17 @@
+[
+  {
+    "jar_name": "jar 1",
+    "shift_date": "06/05/2023",
+    "daily_earnings": 100
+  },
+  {
+    "jar_name": "jar 2",
+    "shift_date": "06/05/2023",
+    "daily_earnings": 100
+  },
+  {
+    "jar_name": "jar 3",
+    "shift_date":"06/05/2023",
+    "daily_earnings": 100
+  }
+]

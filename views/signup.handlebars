@@ -1,0 +1,72 @@
+{{!-- TAILWINDCSS CODE IS BELOW --}}
+<div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
+  {{!-- logo --}}
+  <div class="sm:mx-auto sm:w-full sm:max-w-sm">
+    <a href="/">
+      <img class="mx-auto h-10 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+        alt="The Tip Jar">
+    </a>
+    <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">Create Your Tip Jar Account!
+    </h2>
+  </div>
+
+  {{!-- SIGNUP FORM --}}
+  <div class="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+    <form class="signup-form">
+      {{!-- USERNAME --}}
+      <div>
+        <label for="name" class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+        <div class="mt-2">
+          <input id="name-signup" name="name" type="text" autocomplete="name" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+      {{!-- MONTHLY GOAL --}}
+      <div>
+        <label for="goal-signup" class="block text-sm font-medium leading-6 text-gray-900">Monthly Earning Goal</label>
+        <div class="relative mt-2 rounded-md shadow-sm">
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <span class="text-gray-500 sm:text-sm">$</span>
+          </div>
+          <input type="text" name="price" id="goal-signup" required
+            class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            placeholder="0.00">
+          <div class="absolute inset-y-0 right-0 flex items-center">
+            <label for="goal-signup" class="sr-only">Currency</label>
+            <select id="goal-signup" name="goal-signup"
+              class="h-full rounded-md border-0 bg-transparent py-0 pl-2 pr-7 text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+              <option>USD</option>
+              <option>CAD</option>
+              <option>EUR</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      {{!-- USER EMAIL --}}
+      <div>
+        <label for="email-signup" class="block text-sm font-medium leading-6 text-gray-900">Email
+          Address</label>
+        <div class="mt-2">
+          <input id="email-signup" name="email" type="email" autocomplete="email" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+      {{!-- ACCOUNT PASSWORD --}}
+      <div>
+        <div class="block text-sm font-medium leading-6 text-gray-900">
+          <label for="password-signup" class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+        </div>
+        <div class="form-group mt-2">
+          <input id="password-signup" name="password" type="password" autocomplete="current-password" required
+            class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+        </div>
+      </div>
+      {{!-- SIGNUP BUTTON --}}
+      <div class="form-group">
+        <button type="submit"
+          class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign
+          Up</button>
+      </div>
+
+      <script src="./js/signup.js"></script>
+  </div>
