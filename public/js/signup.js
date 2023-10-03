@@ -8,7 +8,7 @@ const signupFormHandler = async (event) => {
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
 
-alert(name + monthlyGoal + email + password)
+// alert(name + monthlyGoal + email + password)
 
   if (name && monthlyGoal && email && password) {
     const response = await fetch('/api/users', {
