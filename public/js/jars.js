@@ -39,6 +39,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
+const projectName = document.querySelector('#project-name').value.trim();
+
+localStorage.setItem('#project-name', JSON.stringify(projectName));
+
 document
   .querySelector('.new-tip-jar')
   .addEventListener('submit', newFormHandler);
