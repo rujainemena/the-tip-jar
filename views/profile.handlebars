@@ -1,50 +1,153 @@
-<div class="row">
-  <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
-  </div>
-</div>
+{{!-- STARTER CODE --}}
+{{!-- <div class="text-center">
+  <h2>{{name}}</h2>
+  <p>{{{get_emoji}}}</p>
+  <p>{{description}}</p>
+  <p>Created by {{user.name}} on {{format_date date_created}}</p>
+  <p>
+    <span for="img" aria-label="money">💲</span>
+    <span class="dollar-amount">{{format_amount needed_funding}}</span>
+    needed
+  </p>
+  <p>
+    <button class="btn btn-primary">Add more tips!!</button>
+  </p>
+</div> --}}
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>THE TIP JAR</h3>
 
-    <form class="form new-project-form">
-      <div class="form-group">
-        <label for="project-name">THE TIP JAR</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+{{!-- TAILWINDCSS CODE --}}
+<div class="bg-white">
+  {{!-- NAVIGATION MENU --}}
+  <header class="absolute inset-x-0 top-0 z-50">
+    <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+      {{!-- LOGO --}}
+      <div class="flex lg:flex-1">
+        <a href="/" class="-m-1.5 p-1.5">
+          <span class="sr-only">The Tip Jar</span>
+          <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+        </a>
       </div>
-      <div class="form-group">
-    
-        <label for="project-funding">Monthly Earning Goal:</label>
 
-        <input class="form-input" type="number" id="project-funding" name="project-funding" />
+      <div class="flex lg:hidden">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
       </div>
-      <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+      {{!-- MAIN NAVIGATION --}}
+      <div class="hidden lg:flex lg:gap-x-12">
+        <a href="/jars" class="text-sm font-semibold leading-6 text-gray-900">My Tip Jar</a>
+        <a href="/profile" class="text-sm font-semibold leading-6 text-gray-900">Current Earnings</a>
+        <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Goals</a>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+      {{!-- ACCOUNT LOGIN LINK --}}
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a href="/" class="text-sm font-semibold leading-6 text-gray-900">Logout <span
+            aria-hidden="true">&rarr;</span></a>
       </div>
-    </form>
-  </div>
+    </nav>
 
-  {{#if jars.length}}
-  <div class="col-md-6 jar-list">
-    <h3>Current jars:</h3>
+    <!-- MOBILE MENU, show/hide based on menu open state. -->
+    <div id="mobile-menu" class="md:hidden" role="dialog" aria-modal="true">
+      <!-- Background backdrop, show/hide based on slide-over state. -->
+      <div class="fixed inset-0 z-50"></div>
+      <div
+        class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <div class="flex items-center justify-between">
+          {{!-- LOGO --}}
+          <a href="/" class="-m-1.5 p-1.5">
+            <span class="sr-only">The Tip Jar</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+          {{!-- CLOSE MENU --}}
+          <button id="close-button" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Close menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
 
-    {{#each jars as |jar|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/jars/{{jar.id}}">{{jar.jarname}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{jar.id}}">DELETE</button>
+        </div>
+        {{!-- LISTED NAVIGATION --}}
+        <div class="mt-6 flow-root">
+          <div class="-my-6 divide-y divide-gray-500/10">
+            <div class="space-y-2 py-6">
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">My
+                Tip Jar</a>
+              <a href="/profile"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Current
+                Earnings</a>
+              <a href="#"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Goals</a>
+            </div>
+            <div class="py-6">
+              <a href="/"
+                class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-green-50">Logout</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    {{/each}}
-  </div>
-  {{/if}}
-</div>
+  </header>
+  {{!-- HERO SECTION --}}
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl sm:text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">{{name}}'s Tips</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Check out all the tips you've collected so far!</p>
+      </div>
+      {{!-- FULL CARD --}}
+      <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none">
+        {{!-- LEFT CARD --}}
+        <div class="p-8 sm:p-10 lg:flex-auto">
+          <h3 class="text-2xl font-bold tracking-tight text-gray-900">Current Earnings</h3>
+          {{!-- TOTAL ENTERED SO FAR --}}
+          <div class="mt-10 flex items-center gap-x-4">
+            <h4 class="flex-none text-sm font-semibold leading-6 text-indigo-600">RUNNING TOTAL $$</h4>
+            <div class="h-px flex-auto bg-gray-100"></div>
+          </div>
+          {{!-- TIPS LIST --}}
+          <div class="mt-6 border-t border-gray-100">
+            <dl class="divide-y divide-gray-100">
+              {{#each Jars as |jar|}}
+              <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+                <dt class="text-sm font-medium leading-6 text-gray-900">{{format_date jar.shift_date}}</dt>
+                <dd class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0">{{jar.daily_earnings}}</dd>
+              </div>
+              {{/each}}
+            </dl>
+          </div>
+        </div>
 
-<script src="./js/profile.js"></script>
+        {{!-- MONTHLY GOAL CARD --}}
+        <div class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
+          <div
+            class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+            <div class="mx-auto max-w-xs px-8">
+              <p class="text-base font-semibold text-gray-600">Monthly Earning Goal</p>
+          
+              <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                <span class="text-3xl font-semibold leading-6 tracking-wide text-gray-600">$</span>
+                {{#each User as |user|}}
+                <span class="text-5xl font-bold tracking-tight text-gray-900">{{user.monthly_goal}}</span>
+                 {{/each}}
+                <span class="text-sm font-semibold leading-6 tracking-wide text-gray-600">USD</span>
+              </p>
+             
+              {{!-- MUST UPDATE TO GOAL.HANDLEBAR --}}
+              <a href="#"
+                class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Update
+                Goal</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../public/js/logout.js"></script>
