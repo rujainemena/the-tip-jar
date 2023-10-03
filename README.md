@@ -76,6 +76,11 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
     ```md
     ![alt text](assets/images/screenshot.png)
+
+![Creating your tip jar](public/images/Screenshot%202023-10-02%20at%208.39.24%20PM.png)
+
+![Tip Jar Collections](public/images/Screenshot%202023-10-02%20at%208.40.42%20PM.png)
+
     ```
 
 ## Credits
